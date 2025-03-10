@@ -1,9 +1,5 @@
 package main
 
-import (
-	"math"
-)
-
 type WordData struct {
 	word   string
 	length int
@@ -20,7 +16,7 @@ func getRemaining(props GetRemaining) string {
 	if lengthDifference > 0 {
 		return word1.word[word2.length : word2.length+lengthDifference]
 	}
-	return word2.word[word1.length : word1.length+int(math.Abs(float64(lengthDifference)))]
+	return word2.word[word1.length : word1.length-lengthDifference]
 }
 
 func mergeAlternately(word1 string, word2 string) string {
